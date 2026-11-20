@@ -1,0 +1,35 @@
+{
+  "as_of_month": "2026-04",
+  "assets": [
+    {
+      "id": "camera",
+      "category": "equipment",
+      "cost_cents": 10000,
+      "salvage_cents": 1000,
+      "life_months": 6,
+      "in_service_month": "2026-01",
+      "disposal": null
+    },
+    {
+      "id": "printer",
+      "category": "equipment",
+      "cost_cents": 5000,
+      "salvage_cents": 500,
+      "life_months": 3,
+      "in_service_month": "2026-02",
+      "disposal": {
+        "month": "2026-04",
+        "proceeds_cents": 2500
+      }
+    },
+    {
+      "id": "future",
+      "category": "furniture",
+      "cost_cents": 3000,
+      "salvage_cents": 0,
+      "life_months": 12,
+      "in_service_month": "2026-06",
+      "disposal": null
+    }
+  ]
+}
