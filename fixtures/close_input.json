@@ -1,0 +1,90 @@
+{
+  "first_close_month": "2026-01",
+  "as_of_month": "2026-06",
+  "revisions": [
+    {
+      "known_month": "2026-01",
+      "asset": {
+        "id": "bench-lathe",
+        "category": "machining",
+        "cost_cents": 100,
+        "salvage_cents": 0,
+        "life_months": 3,
+        "in_service_month": "2026-01",
+        "disposal": null
+      }
+    },
+    {
+      "known_month": "2026-01",
+      "asset": {
+        "id": "conveyor",
+        "category": "logistics",
+        "cost_cents": 600,
+        "salvage_cents": 120,
+        "life_months": 6,
+        "in_service_month": "2026-01",
+        "disposal": {
+          "month": "2026-05",
+          "proceeds_cents": 300
+        }
+      }
+    },
+    {
+      "known_month": "2026-02",
+      "asset": {
+        "id": "conveyor",
+        "category": "logistics",
+        "cost_cents": 600,
+        "salvage_cents": 120,
+        "life_months": 6,
+        "in_service_month": "2026-01",
+        "disposal": null
+      }
+    },
+    {
+      "known_month": "2026-03",
+      "asset": {
+        "id": "bench-lathe",
+        "category": "machining",
+        "cost_cents": 101,
+        "salvage_cents": 0,
+        "life_months": 3,
+        "in_service_month": "2026-01",
+        "disposal": {
+          "month": "2026-03",
+          "proceeds_cents": 80
+        }
+      }
+    },
+    {
+      "known_month": "2026-04",
+      "asset": {
+        "id": "bench-lathe",
+        "category": "machining",
+        "cost_cents": 101,
+        "salvage_cents": 0,
+        "life_months": 3,
+        "in_service_month": "2026-01",
+        "disposal": {
+          "month": "2026-02",
+          "proceeds_cents": 60
+        }
+      }
+    },
+    {
+      "known_month": "2026-07",
+      "asset": {
+        "id": "bench-lathe",
+        "category": "machining",
+        "cost_cents": 101,
+        "salvage_cents": 0,
+        "life_months": 3,
+        "in_service_month": "2026-01",
+        "disposal": {
+          "month": "2026-02",
+          "proceeds_cents": 55
+        }
+      }
+    }
+  ]
+}

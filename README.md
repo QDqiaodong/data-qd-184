@@ -28,6 +28,22 @@ uv pip check --python .venv/bin/python
 
 成功退出0；业务质量提示或诊断不等于输入失败，见summary。非法输入或已有目标退出2，保留旧目标。JSON最多8MB，拒绝重复键、未知字段及非有限常量。先完整验证与计算，再同目录临时文件原子硬链接新建一个JSON报告。run/已忽略。
 
+## 关账流水与可对账月报（asset-close）
+
+`asset-close` 在不改写历史关账数字的前提下，按“已知月份”逐版吸收资产修订，
+用与 `asset-schedule` 同一套整月折旧与处置规则生成关账流水，并给出
+`booked`（按发布月的历史口径）与 `restated`（按最终版本、经济月重算）两种
+月报，截至截止月两种口径按类别对平。旧 `asset-schedule` 的输入、输出和行为
+保持不变。字段、归属键、排序与失败约定详见[关账契约](docs/close_contract.md)。
+
+```sh
+.venv/bin/asset-close --source fixtures/close_input.json --output run/close_report.json
+```
+
+样例含跨月成本/折旧补记、出售更正、未来处置提前撤销、类别替换以及一条截止月
+后才知道（须完整校验但不影响报告）的修订；截止月为 2026-06，生成 6 个期间。
+输入同样遵守严格 JSON 与 8 MB 上限，非法输入或目标已存在退出 2 并保留旧目标。
+
 ## 数据契约和边界
 
 使用文档明确的整月直线法和整数分累计分配，不代表任何地区法定税务或会计准则。 字段、单位、顺序及失败约定详见[契约](docs/contract.md)。
