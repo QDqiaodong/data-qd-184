@@ -1,0 +1,307 @@
+{
+  "from_date": "2026-01-15",
+  "to_date": "2026-04-10",
+  "assets": [
+    {
+      "id": "lathe-b",
+      "category": "lathe",
+      "active_from": "2026-02-10",
+      "active_until": "2026-03-20",
+      "segments": [
+        {
+          "start": "2026-02-10",
+          "end": "2026-02-20",
+          "status": "available"
+        },
+        {
+          "start": "2026-02-20",
+          "end": "2026-02-21",
+          "status": "maintenance"
+        },
+        {
+          "start": "2026-02-21",
+          "end": "2026-02-23",
+          "status": "incident"
+        },
+        {
+          "start": "2026-02-23",
+          "end": "2026-02-24",
+          "status": "maintenance"
+        },
+        {
+          "start": "2026-02-24",
+          "end": "2026-03-20",
+          "status": "available"
+        }
+      ]
+    },
+    {
+      "id": "press-a",
+      "category": "press",
+      "active_from": "2026-01-01",
+      "active_until": null,
+      "segments": [
+        {
+          "start": "2026-01-15",
+          "end": "2026-01-18",
+          "status": "available"
+        },
+        {
+          "start": "2026-01-18",
+          "end": "2026-01-23",
+          "status": "maintenance"
+        },
+        {
+          "start": "2026-01-23",
+          "end": "2026-03-02",
+          "status": "available"
+        },
+        {
+          "start": "2026-03-02",
+          "end": "2026-03-04",
+          "status": "maintenance"
+        },
+        {
+          "start": "2026-03-04",
+          "end": "2026-03-07",
+          "status": "incident"
+        },
+        {
+          "start": "2026-03-07",
+          "end": "2026-03-10",
+          "status": "available"
+        },
+        {
+          "start": "2026-03-10",
+          "end": "2026-03-15",
+          "status": "maintenance"
+        },
+        {
+          "start": "2026-03-15",
+          "end": "2026-04-01",
+          "status": "available"
+        },
+        {
+          "start": "2026-04-01",
+          "end": "2026-04-03",
+          "status": "maintenance"
+        },
+        {
+          "start": "2026-04-03",
+          "end": "2026-04-08",
+          "status": "available"
+        },
+        {
+          "start": "2026-04-08",
+          "end": "2026-04-10",
+          "status": "maintenance"
+        }
+      ]
+    },
+    {
+      "id": "spare-c",
+      "category": "press",
+      "active_from": "2026-04-01",
+      "active_until": "2026-04-05",
+      "segments": [
+        {
+          "start": "2026-04-01",
+          "end": "2026-04-05",
+          "status": "available"
+        }
+      ]
+    }
+  ],
+  "maintenance_orders": [
+    {
+      "id": "o-lathe",
+      "asset_id": "lathe-b",
+      "planned_start": "2026-02-20",
+      "planned_end": "2026-02-23",
+      "executed_start": "2026-02-21",
+      "executed_end": "2026-02-24",
+      "planned_days": 3,
+      "executed_days": 3,
+      "late_start_days": 1,
+      "outside_plan_days": 1,
+      "status": "completed_outside_window"
+    },
+    {
+      "id": "o-lathe-overlap",
+      "asset_id": "lathe-b",
+      "planned_start": "2026-02-21",
+      "planned_end": "2026-02-22",
+      "executed_start": null,
+      "executed_end": null,
+      "planned_days": 1,
+      "executed_days": 0,
+      "late_start_days": 0,
+      "outside_plan_days": 0,
+      "status": "missed"
+    },
+    {
+      "id": "o-press-early",
+      "asset_id": "press-a",
+      "planned_start": "2026-01-20",
+      "planned_end": "2026-01-22",
+      "executed_start": "2026-01-18",
+      "executed_end": "2026-01-20",
+      "planned_days": 2,
+      "executed_days": 2,
+      "late_start_days": 0,
+      "outside_plan_days": 2,
+      "status": "completed_outside_window"
+    },
+    {
+      "id": "o-press-extra",
+      "asset_id": "press-a",
+      "planned_start": "2026-01-21",
+      "planned_end": "2026-01-23",
+      "executed_start": null,
+      "executed_end": null,
+      "planned_days": 2,
+      "executed_days": 0,
+      "late_start_days": 0,
+      "outside_plan_days": 0,
+      "status": "missed"
+    },
+    {
+      "id": "o-press-inside",
+      "asset_id": "press-a",
+      "planned_start": "2026-03-02",
+      "planned_end": "2026-03-06",
+      "executed_start": "2026-03-03",
+      "executed_end": "2026-03-05",
+      "planned_days": 4,
+      "executed_days": 2,
+      "late_start_days": 1,
+      "outside_plan_days": 0,
+      "status": "completed_within_window"
+    },
+    {
+      "id": "o-press-late",
+      "asset_id": "press-a",
+      "planned_start": "2026-03-10",
+      "planned_end": "2026-03-12",
+      "executed_start": "2026-03-10",
+      "executed_end": "2026-03-15",
+      "planned_days": 2,
+      "executed_days": 5,
+      "late_start_days": 0,
+      "outside_plan_days": 3,
+      "status": "completed_outside_window"
+    },
+    {
+      "id": "o-press-missed",
+      "asset_id": "press-a",
+      "planned_start": "2026-04-01",
+      "planned_end": "2026-04-03",
+      "executed_start": null,
+      "executed_end": null,
+      "planned_days": 2,
+      "executed_days": 0,
+      "late_start_days": 0,
+      "outside_plan_days": 0,
+      "status": "missed"
+    },
+    {
+      "id": "o-press-pending",
+      "asset_id": "press-a",
+      "planned_start": "2026-04-08",
+      "planned_end": "2026-04-10",
+      "executed_start": null,
+      "executed_end": null,
+      "planned_days": 2,
+      "executed_days": 0,
+      "late_start_days": 0,
+      "outside_plan_days": 0,
+      "status": "pending"
+    }
+  ],
+  "periods": [
+    {
+      "month": "2026-01",
+      "categories": {
+        "press": {
+          "active_days": 17,
+          "available_days": 12,
+          "maintenance_days": 5,
+          "incident_days": 0,
+          "unplanned_incident_days": 0,
+          "planned_maintenance_days": 3,
+          "executed_maintenance_days": 2
+        }
+      }
+    },
+    {
+      "month": "2026-02",
+      "categories": {
+        "lathe": {
+          "active_days": 19,
+          "available_days": 15,
+          "maintenance_days": 2,
+          "incident_days": 2,
+          "unplanned_incident_days": 0,
+          "planned_maintenance_days": 3,
+          "executed_maintenance_days": 3
+        },
+        "press": {
+          "active_days": 28,
+          "available_days": 28,
+          "maintenance_days": 0,
+          "incident_days": 0,
+          "unplanned_incident_days": 0,
+          "planned_maintenance_days": 0,
+          "executed_maintenance_days": 0
+        }
+      }
+    },
+    {
+      "month": "2026-03",
+      "categories": {
+        "lathe": {
+          "active_days": 19,
+          "available_days": 19,
+          "maintenance_days": 0,
+          "incident_days": 0,
+          "unplanned_incident_days": 0,
+          "planned_maintenance_days": 0,
+          "executed_maintenance_days": 0
+        },
+        "press": {
+          "active_days": 31,
+          "available_days": 21,
+          "maintenance_days": 7,
+          "incident_days": 3,
+          "unplanned_incident_days": 1,
+          "planned_maintenance_days": 6,
+          "executed_maintenance_days": 7
+        }
+      }
+    },
+    {
+      "month": "2026-04",
+      "categories": {
+        "press": {
+          "active_days": 13,
+          "available_days": 9,
+          "maintenance_days": 4,
+          "incident_days": 0,
+          "unplanned_incident_days": 0,
+          "planned_maintenance_days": 4,
+          "executed_maintenance_days": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "assets": 3,
+    "orders": 8,
+    "incidents": 3,
+    "active_days": 127,
+    "available_days": 104,
+    "maintenance_days": 18,
+    "incident_days": 5,
+    "unplanned_incident_days": 1
+  }
+}

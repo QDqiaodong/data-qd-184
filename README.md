@@ -44,6 +44,21 @@ uv pip check --python .venv/bin/python
 后才知道（须完整校验但不影响报告）的修订；截止月为 2026-06，生成 6 个期间。
 输入同样遵守严格 JSON 与 8 MB 上限，非法输入或目标已存在退出 2 并保留旧目标。
 
+## 资产可用性、维护履约与事故归因（asset-availability）
+
+`asset-availability` 按自然日生成设备级状态段、维护订单履约指标与
+按月的类别汇总，全部用标准库实现，与财务命令互不影响。字段、逐日优先级、
+事故归因与排序约定详见[可用性契约](docs/availability_contract.md)。
+
+```sh
+.venv/bin/asset-availability --source fixtures/availability_input.json --output run/availability.json
+```
+
+样例报告区间为 `[2026-01-15, 2026-04-10)`，含 3 项资产、8 个维护订单、
+3 条事故；生成 2026-01 至 2026-04 四个月（含空月份保留），预期结果见
+`fixtures/availability_expected.json`。输入同样遵守严格 JSON 与 8 MB
+上限，非法输入或目标已存在退出 2 并保留旧目标。
+
 ## 数据契约和边界
 
 使用文档明确的整月直线法和整数分累计分配，不代表任何地区法定税务或会计准则。 字段、单位、顺序及失败约定详见[契约](docs/contract.md)。

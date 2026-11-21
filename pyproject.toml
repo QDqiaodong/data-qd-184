@@ -11,6 +11,7 @@ dependencies = []
 [project.scripts]
 asset-schedule = "asset_schedule.cli:main"
 asset-close = "asset_close.cli:main"
+asset-availability = "asset_availability.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
