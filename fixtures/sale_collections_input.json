@@ -1,0 +1,53 @@
+{
+  "lineage": {
+    "from_month": "2026-01",
+    "as_of_month": "2026-03",
+    "assets": [
+      {"id": "press-a", "category": "equipment", "cost_cents": 400,
+       "salvage_cents": 40, "life_months": 4,
+       "in_service_month": "2026-01", "disposal": null},
+      {"id": "lathe-b", "category": "tools", "cost_cents": 120,
+       "salvage_cents": 0, "life_months": 3,
+       "in_service_month": "2026-02", "disposal": null},
+      {"id": "scrap-c", "category": "tools", "cost_cents": 30,
+       "salvage_cents": 0, "life_months": 2,
+       "in_service_month": "2026-02", "disposal": null}
+    ],
+    "events": [
+      {"id": "sale-press", "month": "2026-03", "seq": 1, "kind": "sell",
+       "asset_id": "press-a", "proceeds_cents": 300},
+      {"id": "sale-lathe", "month": "2026-03", "seq": 2, "kind": "sell",
+       "asset_id": "lathe-b", "proceeds_cents": 150},
+      {"id": "sale-scrap", "month": "2026-03", "seq": 3, "kind": "sell",
+       "asset_id": "scrap-c", "proceeds_cents": 0}
+    ]
+  },
+  "terms": [
+    {"sale_id": "sale-press", "installments": [
+      {"due_month": "2026-04", "amount_cents": 180},
+      {"due_month": "2026-05", "amount_cents": 120}
+    ]},
+    {"sale_id": "sale-lathe", "installments": [
+      {"due_month": "2026-04", "amount_cents": 70},
+      {"due_month": "2026-05", "amount_cents": 50},
+      {"due_month": "2026-06", "amount_cents": 30}
+    ]}
+  ],
+  "through_month": "2026-07",
+  "bank_rows": [
+    {"month": "2026-04", "seq": 1, "kind": "receipt",
+     "sale_id": "sale-press", "amount_cents": 320},
+    {"month": "2026-04", "seq": 2, "kind": "receipt",
+     "sale_id": "sale-lathe", "amount_cents": 60},
+    {"month": "2026-05", "seq": 1, "kind": "chargeback",
+     "receipt_month": "2026-04", "receipt_seq": 1, "amount_cents": 50},
+    {"month": "2026-05", "seq": 2, "kind": "chargeback",
+     "receipt_month": "2026-04", "receipt_seq": 1, "amount_cents": 70},
+    {"month": "2026-06", "seq": 1, "kind": "chargeback",
+     "receipt_month": "2026-04", "receipt_seq": 2, "amount_cents": 25},
+    {"month": "2026-06", "seq": 2, "kind": "receipt",
+     "sale_id": "sale-lathe", "amount_cents": 40},
+    {"month": "2026-07", "seq": 1, "kind": "receipt",
+     "sale_id": "sale-press", "amount_cents": 30}
+  ]
+}

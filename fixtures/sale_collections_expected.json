@@ -1,0 +1,310 @@
+{
+  "through_month": "2026-07",
+  "periods": [
+    {
+      "month": "2026-04",
+      "accounts": [
+        {
+          "sale_id": "sale-lathe",
+          "received_net_cents": 60,
+          "applied_cents": 60,
+          "unapplied_cents": 0,
+          "outstanding_cents": 90,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 10
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 50
+            },
+            {
+              "due_month": "2026-06",
+              "open_cents": 30
+            }
+          ]
+        },
+        {
+          "sale_id": "sale-press",
+          "received_net_cents": 320,
+          "applied_cents": 300,
+          "unapplied_cents": 20,
+          "outstanding_cents": 0,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 0
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 0
+            }
+          ]
+        }
+      ],
+      "collection_orders": []
+    },
+    {
+      "month": "2026-05",
+      "accounts": [
+        {
+          "sale_id": "sale-lathe",
+          "received_net_cents": 60,
+          "applied_cents": 60,
+          "unapplied_cents": 0,
+          "outstanding_cents": 90,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 10
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 50
+            },
+            {
+              "due_month": "2026-06",
+              "open_cents": 30
+            }
+          ]
+        },
+        {
+          "sale_id": "sale-press",
+          "received_net_cents": 200,
+          "applied_cents": 200,
+          "unapplied_cents": 0,
+          "outstanding_cents": 100,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 0
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 100
+            }
+          ]
+        }
+      ],
+      "collection_orders": []
+    },
+    {
+      "month": "2026-06",
+      "accounts": [
+        {
+          "sale_id": "sale-lathe",
+          "received_net_cents": 75,
+          "applied_cents": 75,
+          "unapplied_cents": 0,
+          "outstanding_cents": 75,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 0
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 45
+            },
+            {
+              "due_month": "2026-06",
+              "open_cents": 30
+            }
+          ]
+        },
+        {
+          "sale_id": "sale-press",
+          "received_net_cents": 200,
+          "applied_cents": 200,
+          "unapplied_cents": 0,
+          "outstanding_cents": 100,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 0
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 100
+            }
+          ]
+        }
+      ],
+      "collection_orders": []
+    },
+    {
+      "month": "2026-07",
+      "accounts": [
+        {
+          "sale_id": "sale-lathe",
+          "received_net_cents": 75,
+          "applied_cents": 75,
+          "unapplied_cents": 0,
+          "outstanding_cents": 75,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 0
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 45
+            },
+            {
+              "due_month": "2026-06",
+              "open_cents": 30
+            }
+          ]
+        },
+        {
+          "sale_id": "sale-press",
+          "received_net_cents": 230,
+          "applied_cents": 230,
+          "unapplied_cents": 0,
+          "outstanding_cents": 70,
+          "installments": [
+            {
+              "due_month": "2026-04",
+              "open_cents": 0
+            },
+            {
+              "due_month": "2026-05",
+              "open_cents": 70
+            }
+          ]
+        }
+      ],
+      "collection_orders": [
+        {
+          "sale_id": "sale-lathe",
+          "action": "open",
+          "installments": [
+            {
+              "due_month": "2026-05",
+              "open_cents": 45
+            }
+          ]
+        },
+        {
+          "sale_id": "sale-press",
+          "action": "open",
+          "installments": [
+            {
+              "due_month": "2026-05",
+              "open_cents": 70
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "checkpoint": {
+    "format_version": 1,
+    "through_month": "2026-07",
+    "accounts": [
+      {
+        "sale_id": "sale-lathe",
+        "principal_cents": 150,
+        "installments": [
+          {
+            "due_month": "2026-04",
+            "open_cents": 0,
+            "principal_cents": 70
+          },
+          {
+            "due_month": "2026-05",
+            "open_cents": 45,
+            "principal_cents": 50
+          },
+          {
+            "due_month": "2026-06",
+            "open_cents": 30,
+            "principal_cents": 30
+          }
+        ],
+        "gross_received_cents": 100,
+        "gross_chargeback_cents": 25,
+        "applied_cents": 75,
+        "unapplied_cents": 0,
+        "prev_overdue": {
+          "2026-05": 45,
+          "2026-06": 30
+        },
+        "mandate": {
+          "installments": [
+            {
+              "due_month": "2026-05",
+              "open_cents": 45
+            }
+          ]
+        }
+      },
+      {
+        "sale_id": "sale-press",
+        "principal_cents": 300,
+        "installments": [
+          {
+            "due_month": "2026-04",
+            "open_cents": 0,
+            "principal_cents": 180
+          },
+          {
+            "due_month": "2026-05",
+            "open_cents": 70,
+            "principal_cents": 120
+          }
+        ],
+        "gross_received_cents": 350,
+        "gross_chargeback_cents": 120,
+        "applied_cents": 230,
+        "unapplied_cents": 0,
+        "prev_overdue": {
+          "2026-05": 70
+        },
+        "mandate": {
+          "installments": [
+            {
+              "due_month": "2026-05",
+              "open_cents": 70
+            }
+          ]
+        }
+      }
+    ],
+    "receipts": [
+      {
+        "month": "2026-06",
+        "seq": 2,
+        "sale_id": "sale-lathe",
+        "amount_cents": 40,
+        "chargeback_cents": 0,
+        "unapplied_cents": 0,
+        "applications": [
+          {
+            "due_month": "2026-04",
+            "open_cents": 35
+          },
+          {
+            "due_month": "2026-05",
+            "open_cents": 5
+          }
+        ]
+      },
+      {
+        "month": "2026-07",
+        "seq": 1,
+        "sale_id": "sale-press",
+        "amount_cents": 30,
+        "chargeback_cents": 0,
+        "unapplied_cents": 0,
+        "applications": [
+          {
+            "due_month": "2026-05",
+            "open_cents": 30
+          }
+        ]
+      }
+    ]
+  }
+}

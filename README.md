@@ -115,6 +115,28 @@ M 再等权拆成 X/Y，3 月出售 X，报告到 4 月；预期结果见
 非法输入或目标已存在退出 2 并保留旧目标；没有合格选择时正常退出并只写
 `{"status": "blocked", "as_of_month": ...}`。
 
+## 处置后银行收款核销、退扣与催收交接（asset-sale-collections）
+
+`asset-sale-collections` 把 `asset-lineage` 认列的正出售所得按出售事件
+建立应收（键为出售事件 ID，本金等于 `proceeds_cents`，零所得不建账），
+再按银行到账依到期月从早到晚核销分期；多余款项留作该笔到账自己的未用款，
+不冲抵别的应收。退扣只能引用退扣窗口（M、M+1、M+2 月）内的原到账，先退
+未用款再按原核销相反次序撤回；窗口关闭后只保留对余额的汇总影响，清除
+识别键与逐笔明细。每月末按“紧邻上、本月末均仍逾期”的双月末规则比较
+生效委托，发出 `open`/`replace`/`withdraw` 指令；报告同时给出可直接
+复制续跑的自包含交接包，任意切点拆批与一次处理的合并结果一致。字段、
+不变量、窗口与失败约定详见[收款催收契约](docs/sale_collections_contract.md)。
+
+```sh
+.venv/bin/asset-sale-collections --source fixtures/sale_collections_input.json --output run/sale_collections.json
+```
+
+样例含两笔正所得出售与一笔零所得出售（后者不建应收）、含未用款的到账、
+同月与跨月连续部分退扣、窗口关闭后的明细清除，以及 7 月末首次发出的两条
+`open` 委托；预期结果见 `fixtures/sale_collections_expected.json`。输入
+同样遵守严格 JSON 与 8 MB 上限，非法输入（含自相矛盾的交接包）或目标已
+存在退出 2 并保留旧目标。
+
 ## 数据契约和边界
 
 使用文档明确的整月直线法和整数分累计分配，不代表任何地区法定税务或会计准则。 字段、单位、顺序及失败约定详见[契约](docs/contract.md)。

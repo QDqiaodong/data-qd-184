@@ -29,3 +29,12 @@
 C=(4,0,6)，只有 A/X 敏感。`disclosure_expected.json` 是同一输入的完整
 预期报告，可由 `asset-balance-disclosure` 直接复现。设备编号、类别、保管
 单位与金额均为手工构造，不对应任何真实资产。
+
+`sale_collections_input.json` 为 `asset-sale-collections` 的原创合成收款
+催收样例：3 月三笔出售中一笔零所得（不建应收），两笔正所得分别约定 2 期
+与 3 期分期；银行流水覆盖带未用款的大额到账、同一到账的连续部分退扣
+（先退未用款再按相反次序撤回核销）、跨月退扣与窗口关闭后的明细清除，
+7 月末首次对两笔应收各发一条 `open` 委托。`sale_collections_expected.json`
+是同一输入逐期手工对账后的完整预期报告（含可直接续跑的交接包），可由
+`asset-sale-collections` 直接复现。出售事件、设备编号与金额均为手工
+构造，不对应任何真实资产或银行凭证。
