@@ -1,0 +1,85 @@
+{
+  "status": "planned",
+  "score": {
+    "high_accepted": 1,
+    "normal_accepted": 2,
+    "maintenance_shift_days": 2
+  },
+  "maintenance": [
+    {
+      "order_id": "m-crane-a",
+      "asset_id": "crane-a",
+      "start": "2026-05-05",
+      "end": "2026-05-06"
+    },
+    {
+      "order_id": "m-lift-c",
+      "asset_id": "lift-c",
+      "start": "2026-05-06",
+      "end": "2026-05-08"
+    }
+  ],
+  "assignments": [
+    {
+      "request_id": "r-high",
+      "asset_id": "crane-b"
+    },
+    {
+      "request_id": "r-lift",
+      "asset_id": "lift-c"
+    },
+    {
+      "request_id": "r-lift2",
+      "asset_id": null
+    },
+    {
+      "request_id": "r-mid",
+      "asset_id": "crane-a"
+    }
+  ],
+  "alternatives": [
+    {
+      "request_id": "r-lift2",
+      "status": "feasible",
+      "score": {
+        "high_accepted": 1,
+        "normal_accepted": 1,
+        "maintenance_shift_days": 1
+      },
+      "maintenance_changes": [
+        {
+          "order_id": "m-crane-a",
+          "old_start": "2026-05-05",
+          "new_start": "2026-05-06"
+        },
+        {
+          "order_id": "m-lift-c",
+          "old_start": "2026-05-06",
+          "new_start": "2026-05-04"
+        }
+      ],
+      "assignment_changes": [
+        {
+          "request_id": "r-high",
+          "old_asset_id": "crane-b",
+          "new_asset_id": "crane-a"
+        },
+        {
+          "request_id": "r-lift",
+          "old_asset_id": "lift-c",
+          "new_asset_id": null
+        },
+        {
+          "request_id": "r-lift2",
+          "old_asset_id": null,
+          "new_asset_id": "lift-c"
+        },
+        {
+          "request_id": "r-mid",
+          "old_asset_id": "crane-a",
+          "new_asset_id": null
+        }
+      ]
+    }
+  ]
+}

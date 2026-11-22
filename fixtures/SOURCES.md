@@ -9,3 +9,9 @@
 事故覆盖计划维护以及多订单重叠；`availability_expected.json` 是同一输入的
 完整预期报告，可由 `asset-availability` 直接复现。设备编号与事件均为手工
 构造，不对应任何真实资产或事故。
+
+`dispatch_input.json` 为 `asset-dispatch` 的原创合成调度样例，覆盖跨设备
+共享班组冲突、固定维护与事故占用、多日工期、高优先级优先接单、落选请求
+及其加单后的检修改期与请求改派；`dispatch_expected.json` 是同一输入的
+完整预期报告，可由 `asset-dispatch` 直接复现。设备、班组与请求均为手工
+构造，不对应任何真实资产或计划。

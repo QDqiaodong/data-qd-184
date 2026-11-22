@@ -59,6 +59,24 @@ uv pip check --python .venv/bin/python
 `fixtures/availability_expected.json`。输入同样遵守严格 JSON 与 8 MB
 上限，非法输入或目标已存在退出 2 并保留旧目标。
 
+## 待排检修与连续用机联合调度（asset-dispatch）
+
+`asset-dispatch` 在 `asset-availability` 的固定事实之上，把有检修窗口的
+待排检修排进日历，并按“高优先级接单数、普通接单数、检修偏移天数、开工日
+向量、分配向量”的字典序目标决定接下哪些连续用机请求；对主计划每笔落选
+请求各做一次独立加单分析，说明强制承接后检修如何改期、其余请求如何改派。
+字段、校验、目标与决胜顺序详见[调度契约](docs/dispatch_contract.md)。
+
+```sh
+.venv/bin/asset-dispatch --source fixtures/dispatch_input.json --output run/dispatch.json
+```
+
+样例窗口为 `[2026-05-04, 2026-05-08)`，含 3 台设备、1 个固定维护订单、
+1 条事故、2 项待排检修、4 笔请求；主计划接 3 笔、落选 1 笔，预期结果见
+`fixtures/dispatch_expected.json`。输入同样遵守严格 JSON 与 8 MB 上限，
+非法输入或目标已存在退出 2 并保留旧目标；检修本身不可行时写出
+`{"status": "infeasible"}` 并正常退出 0。
+
 ## 数据契约和边界
 
 使用文档明确的整月直线法和整数分累计分配，不代表任何地区法定税务或会计准则。 字段、单位、顺序及失败约定详见[契约](docs/contract.md)。

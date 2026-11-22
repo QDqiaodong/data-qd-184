@@ -1,0 +1,98 @@
+{
+  "availability": {
+    "from_date": "2026-05-04",
+    "to_date": "2026-05-08",
+    "assets": [
+      {
+        "id": "crane-a",
+        "category": "crane",
+        "active_from": "2026-05-01",
+        "active_until": null
+      },
+      {
+        "id": "crane-b",
+        "category": "crane",
+        "active_from": "2026-05-01",
+        "active_until": null
+      },
+      {
+        "id": "lift-c",
+        "category": "lift",
+        "active_from": "2026-05-01",
+        "active_until": null
+      }
+    ],
+    "maintenance_orders": [
+      {
+        "id": "fixed-crane-a",
+        "asset_id": "crane-a",
+        "planned_start": "2026-05-04",
+        "planned_end": "2026-05-05",
+        "executed_start": null,
+        "executed_end": null
+      }
+    ],
+    "incidents": [
+      {
+        "id": "inc-crane-b",
+        "asset_id": "crane-b",
+        "start": "2026-05-06",
+        "end": "2026-05-07"
+      }
+    ]
+  },
+  "crew_by_date": {
+    "2026-05-04": 1,
+    "2026-05-05": 1,
+    "2026-05-06": 1,
+    "2026-05-07": 1
+  },
+  "flexible_orders": [
+    {
+      "id": "m-crane-a",
+      "asset_id": "crane-a",
+      "window_start": "2026-05-05",
+      "window_end": "2026-05-07",
+      "duration_days": 1,
+      "preferred_start": "2026-05-05"
+    },
+    {
+      "id": "m-lift-c",
+      "asset_id": "lift-c",
+      "window_start": "2026-05-04",
+      "window_end": "2026-05-08",
+      "duration_days": 2,
+      "preferred_start": "2026-05-04"
+    }
+  ],
+  "requests": [
+    {
+      "id": "r-high",
+      "category": "crane",
+      "start": "2026-05-05",
+      "end": "2026-05-06",
+      "priority": "high"
+    },
+    {
+      "id": "r-mid",
+      "category": "crane",
+      "start": "2026-05-06",
+      "end": "2026-05-07",
+      "priority": "normal"
+    },
+    {
+      "id": "r-lift",
+      "category": "lift",
+      "start": "2026-05-04",
+      "end": "2026-05-06",
+      "priority": "normal"
+    },
+    {
+      "id": "r-lift2",
+      "category": "lift",
+      "start": "2026-05-06",
+      "end": "2026-05-08",
+      "priority": "normal"
+    }
+  ]
+}
