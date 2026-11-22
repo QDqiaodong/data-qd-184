@@ -1,0 +1,84 @@
+{
+  "status": "ready",
+  "as_of_month": "2026-02",
+  "row_totals": [
+    {
+      "category": "A",
+      "closing_book_cents": 10
+    },
+    {
+      "category": "B",
+      "closing_book_cents": 10
+    },
+    {
+      "category": "C",
+      "closing_book_cents": 10
+    }
+  ],
+  "column_totals": [
+    {
+      "custodian": "X",
+      "closing_book_cents": 14
+    },
+    {
+      "custodian": "Y",
+      "closing_book_cents": 10
+    },
+    {
+      "custodian": "Z",
+      "closing_book_cents": 6
+    }
+  ],
+  "cells": [
+    {
+      "category": "A",
+      "custodian": "X",
+      "status": "hidden"
+    },
+    {
+      "category": "A",
+      "custodian": "Y",
+      "status": "hidden"
+    },
+    {
+      "category": "A",
+      "custodian": "Z",
+      "status": "shown",
+      "closing_book_cents": 0
+    },
+    {
+      "category": "B",
+      "custodian": "X",
+      "status": "hidden"
+    },
+    {
+      "category": "B",
+      "custodian": "Y",
+      "status": "hidden"
+    },
+    {
+      "category": "B",
+      "custodian": "Z",
+      "status": "shown",
+      "closing_book_cents": 0
+    },
+    {
+      "category": "C",
+      "custodian": "X",
+      "status": "shown",
+      "closing_book_cents": 4
+    },
+    {
+      "category": "C",
+      "custodian": "Y",
+      "status": "shown",
+      "closing_book_cents": 0
+    },
+    {
+      "category": "C",
+      "custodian": "Z",
+      "status": "shown",
+      "closing_book_cents": 6
+    }
+  ]
+}

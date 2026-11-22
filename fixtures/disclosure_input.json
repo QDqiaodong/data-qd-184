@@ -1,0 +1,46 @@
+{
+  "lineage": {
+    "from_month": "2026-01",
+    "as_of_month": "2026-02",
+    "assets": [
+      {"id": "lathe", "category": "A", "cost_cents": 4, "salvage_cents": 4, "life_months": 1, "in_service_month": "2026-01", "disposal": null},
+      {"id": "mill", "category": "A", "cost_cents": 2, "salvage_cents": 2, "life_months": 1, "in_service_month": "2026-01", "disposal": null},
+      {"id": "drill", "category": "A", "cost_cents": 8, "salvage_cents": 4, "life_months": 2, "in_service_month": "2026-01", "disposal": null},
+      {"id": "saw", "category": "B", "cost_cents": 8, "salvage_cents": 4, "life_months": 2, "in_service_month": "2026-01", "disposal": null},
+      {"id": "press", "category": "B", "cost_cents": 12, "salvage_cents": 6, "life_months": 2, "in_service_month": "2026-01", "disposal": null},
+      {"id": "cnc", "category": "C", "cost_cents": 8, "salvage_cents": 4, "life_months": 2, "in_service_month": "2026-01", "disposal": null},
+      {"id": "robot", "category": "C", "cost_cents": 12, "salvage_cents": 6, "life_months": 2, "in_service_month": "2026-01", "disposal": null},
+      {"id": "old-saw", "category": "B", "cost_cents": 5, "salvage_cents": 1, "life_months": 2, "in_service_month": "2026-01", "disposal": null},
+      {"id": "junk", "category": "C", "cost_cents": 2, "salvage_cents": 0, "life_months": 1, "in_service_month": "2026-01", "disposal": null}
+    ],
+    "events": [
+      {"id": "ev-sell-junk", "month": "2026-01", "seq": 1, "kind": "sell", "asset_id": "junk", "proceeds_cents": 1},
+      {"id": "ev-merge-a", "month": "2026-02", "seq": 1, "kind": "reconfigure", "sources": ["lathe", "mill"], "targets": [{"id": "cell-a", "category": "A", "weight": 1}]},
+      {"id": "ev-sell-old", "month": "2026-02", "seq": 2, "kind": "sell", "asset_id": "old-saw", "proceeds_cents": 3}
+    ]
+  },
+  "categories": ["A", "B", "C"],
+  "custodians": ["X", "Y", "Z"],
+  "custodian_by_device": {
+    "lathe": "X",
+    "mill": "X",
+    "cell-a": "X",
+    "drill": "Y",
+    "saw": "X",
+    "press": "Y",
+    "old-saw": "Y",
+    "cnc": "X",
+    "robot": "Z"
+  },
+  "cells": [
+    {"category": "A", "custodian": "X", "mode": "protected", "min_span_cents": 5},
+    {"category": "A", "custodian": "Y", "mode": "optional", "suppression_cost": 1},
+    {"category": "A", "custodian": "Z", "mode": "optional", "suppression_cost": 2},
+    {"category": "B", "custodian": "X", "mode": "optional", "suppression_cost": 1},
+    {"category": "B", "custodian": "Y", "mode": "optional", "suppression_cost": 1},
+    {"category": "B", "custodian": "Z", "mode": "structural_zero"},
+    {"category": "C", "custodian": "X", "mode": "optional", "suppression_cost": 2},
+    {"category": "C", "custodian": "Y", "mode": "structural_zero"},
+    {"category": "C", "custodian": "Z", "mode": "optional", "suppression_cost": 2}
+  ]
+}

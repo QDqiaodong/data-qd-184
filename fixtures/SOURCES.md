@@ -21,3 +21,11 @@
 决胜）、出售前转出全部剩余价值以及残值跨改造承继；`lineage_expected.json`
 是同一输入的完整预期报告，可由 `asset-lineage` 直接复现。设备编号、类别
 与金额均为手工构造，不对应任何真实资产。
+
+`disclosure_input.json` 为 `asset-balance-disclosure` 的原创合成披露样例：
+台账覆盖 2 月合装（lathe/mill 并为 cell-a）、2 月出售 old-saw（转出价值
+不计入期末，零余额设备仍列入月表并须归口）以及仅在 1 月出现、不进归口
+映射的 junk；三行 A/B/C、三列 X/Y/Z 的真值为 A=(6,4,0)、B=(4,6,0)、
+C=(4,0,6)，只有 A/X 敏感。`disclosure_expected.json` 是同一输入的完整
+预期报告，可由 `asset-balance-disclosure` 直接复现。设备编号、类别、保管
+单位与金额均为手工构造，不对应任何真实资产。

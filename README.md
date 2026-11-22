@@ -96,6 +96,25 @@ M 再等权拆成 X/Y，3 月出售 X，报告到 4 月；预期结果见
 `fixtures/lineage_expected.json`。输入同样遵守严格 JSON 与 8 MB 上限，
 非法输入（包括回放较晚才发现的引用错误）或目标已存在退出 2 并保留旧目标。
 
+## 资产余额交叉表披露（asset-balance-disclosure）
+
+`asset-balance-disclosure` 在 `asset-lineage` 的截止月设备月表之上，按
+「资产类别 × 保管单位」汇总期末账面余额，为园区协作方挑选代价最低且符合
+披露口径的交叉表：两侧小计、必须公开格与未遮蔽可选格公开后，每个敏感格
+在全部相容非负整数表上的可达跨度仍须达到各自的最小跨度；合格选择中依次
+最小化遮蔽损失之和、遮蔽格数与遮蔽键列表字典序。字段、相容表界定与决胜
+顺序详见[披露契约](docs/disclosure_contract.md)。
+
+```sh
+.venv/bin/asset-balance-disclosure --source fixtures/disclosure_input.json --output run/disclosure.json
+```
+
+样例台账含 2 月合装与出售（出售转出价值不计入期末、仅以往月份出现的设备
+不进归口映射），三行 A/B/C、三列 X/Y/Z，只有 A/X 敏感；预期结果见
+`fixtures/disclosure_expected.json`。输入同样遵守严格 JSON 与 8 MB 上限，
+非法输入或目标已存在退出 2 并保留旧目标；没有合格选择时正常退出并只写
+`{"status": "blocked", "as_of_month": ...}`。
+
 ## 数据契约和边界
 
 使用文档明确的整月直线法和整数分累计分配，不代表任何地区法定税务或会计准则。 字段、单位、顺序及失败约定详见[契约](docs/contract.md)。

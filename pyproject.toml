@@ -14,6 +14,7 @@ asset-close = "asset_close.cli:main"
 asset-availability = "asset_availability.cli:main"
 asset-dispatch = "asset_dispatch.cli:main"
 asset-lineage = "asset_lineage.cli:main"
+asset-balance-disclosure = "asset_disclosure.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
