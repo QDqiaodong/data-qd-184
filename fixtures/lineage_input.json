@@ -1,0 +1,66 @@
+{
+  "from_month": "2026-01",
+  "as_of_month": "2026-04",
+  "assets": [
+    {
+      "id": "B",
+      "category": "tools",
+      "cost_cents": 5,
+      "salvage_cents": 2,
+      "life_months": 3,
+      "in_service_month": "2026-02",
+      "disposal": null
+    },
+    {
+      "id": "A",
+      "category": "equipment",
+      "cost_cents": 10,
+      "salvage_cents": 1,
+      "life_months": 4,
+      "in_service_month": "2026-01",
+      "disposal": null
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-sell-x",
+      "month": "2026-03",
+      "seq": 1,
+      "kind": "sell",
+      "asset_id": "X",
+      "proceeds_cents": 8
+    },
+    {
+      "id": "ev-split-m",
+      "month": "2026-02",
+      "seq": 3,
+      "kind": "reconfigure",
+      "sources": ["M"],
+      "targets": [
+        {"id": "X", "category": "equipment", "weight": 1},
+        {"id": "Y", "category": "equipment", "weight": 1}
+      ]
+    },
+    {
+      "id": "ev-merge",
+      "month": "2026-02",
+      "seq": 2,
+      "kind": "reconfigure",
+      "sources": ["L", "R", "B"],
+      "targets": [
+        {"id": "M", "category": "equipment", "weight": 1}
+      ]
+    },
+    {
+      "id": "ev-split-a",
+      "month": "2026-02",
+      "seq": 1,
+      "kind": "reconfigure",
+      "sources": ["A"],
+      "targets": [
+        {"id": "L", "category": "equipment", "weight": 1},
+        {"id": "R", "category": "equipment", "weight": 1}
+      ]
+    }
+  ]
+}

@@ -77,6 +77,25 @@ uv pip check --python .venv/bin/python
 非法输入或目标已存在退出 2 并保留旧目标；检修本身不可行时写出
 `{"status": "infeasible"}` 并正常退出 0。
 
+## 资产拆并改造的价值承继与按月台账（asset-lineage）
+
+`asset-lineage` 从原始入账与改造、出售事件生成价值承继清单和按月台账。
+设备拆分、合装或一换一时，尚未消耗的账面价值按**原始投入 ID** 与**原应计
+月份**（残值始终单列）在设备间转移：合装把同源同月份额并成一笔，拆分对
+每笔未计提金额按权重分配整数分（先取整数部分，余分按小数部分降序、并列
+按 ID 字典序）；出售按事件时点的全部剩余价值转出并确认处置损益。不改造
+时折旧与处置口径与 `asset-schedule` 完全一致。字段、生效顺序、取整与对账
+约定详见[价值承继契约](docs/lineage_contract.md)。
+
+```sh
+.venv/bin/asset-lineage --source fixtures/lineage_input.json --output run/lineage.json
+```
+
+样例覆盖 1 月投入 A、2 月投入 B，2 月内 A 等权拆成 L/R、与 B 合装为 M、
+M 再等权拆成 X/Y，3 月出售 X，报告到 4 月；预期结果见
+`fixtures/lineage_expected.json`。输入同样遵守严格 JSON 与 8 MB 上限，
+非法输入（包括回放较晚才发现的引用错误）或目标已存在退出 2 并保留旧目标。
+
 ## 数据契约和边界
 
 使用文档明确的整月直线法和整数分累计分配，不代表任何地区法定税务或会计准则。 字段、单位、顺序及失败约定详见[契约](docs/contract.md)。

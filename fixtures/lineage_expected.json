@@ -1,0 +1,154 @@
+{
+  "from_month": "2026-01",
+  "as_of_month": "2026-04",
+  "events": [
+    {
+      "month": "2026-02",
+      "seq": 1,
+      "id": "ev-split-a",
+      "kind": "reconfigure",
+      "sources": [
+        {"asset_id": "A", "carrying_cents": 8, "by_origin": {"A": 8}}
+      ],
+      "targets": [
+        {"asset_id": "L", "carrying_cents": 5, "by_origin": {"A": 5}},
+        {"asset_id": "R", "carrying_cents": 3, "by_origin": {"A": 3}}
+      ]
+    },
+    {
+      "month": "2026-02",
+      "seq": 2,
+      "id": "ev-merge",
+      "kind": "reconfigure",
+      "sources": [
+        {"asset_id": "B", "carrying_cents": 5, "by_origin": {"B": 5}},
+        {"asset_id": "L", "carrying_cents": 5, "by_origin": {"A": 5}},
+        {"asset_id": "R", "carrying_cents": 3, "by_origin": {"A": 3}}
+      ],
+      "targets": [
+        {"asset_id": "M", "carrying_cents": 13, "by_origin": {"A": 8, "B": 5}}
+      ]
+    },
+    {
+      "month": "2026-02",
+      "seq": 3,
+      "id": "ev-split-m",
+      "kind": "reconfigure",
+      "sources": [
+        {"asset_id": "M", "carrying_cents": 13, "by_origin": {"A": 8, "B": 5}}
+      ],
+      "targets": [
+        {"asset_id": "X", "carrying_cents": 9, "by_origin": {"A": 5, "B": 4}},
+        {"asset_id": "Y", "carrying_cents": 4, "by_origin": {"A": 3, "B": 1}}
+      ]
+    },
+    {
+      "month": "2026-03",
+      "seq": 1,
+      "id": "ev-sell-x",
+      "kind": "sell",
+      "asset": {"asset_id": "X", "carrying_cents": 7, "by_origin": {"A": 4, "B": 3}},
+      "proceeds_cents": 8,
+      "gain_loss_cents": 1
+    }
+  ],
+  "periods": [
+    {
+      "month": "2026-01",
+      "assets": [
+        {"asset_id": "A", "category": "equipment", "opening_book_cents": 0,
+         "acquired_cents": 10, "transfer_in_cents": 0, "transfer_out_cents": 0,
+         "depreciation_cents": 2, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 8}
+      ],
+      "categories": {
+        "equipment": {"opening_book_cents": 0, "acquired_cents": 10,
+                      "transfer_in_cents": 0, "transfer_out_cents": 0,
+                      "depreciation_cents": 2, "carrying_removed_cents": 0,
+                      "proceeds_cents": 0, "gain_loss_cents": 0,
+                      "closing_book_cents": 8}
+      }
+    },
+    {
+      "month": "2026-02",
+      "assets": [
+        {"asset_id": "A", "category": "equipment", "opening_book_cents": 8,
+         "acquired_cents": 0, "transfer_in_cents": 0, "transfer_out_cents": 8,
+         "depreciation_cents": 0, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 0},
+        {"asset_id": "B", "category": "tools", "opening_book_cents": 0,
+         "acquired_cents": 5, "transfer_in_cents": 0, "transfer_out_cents": 5,
+         "depreciation_cents": 0, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 0},
+        {"asset_id": "L", "category": "equipment", "opening_book_cents": 0,
+         "acquired_cents": 0, "transfer_in_cents": 5, "transfer_out_cents": 5,
+         "depreciation_cents": 0, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 0},
+        {"asset_id": "M", "category": "equipment", "opening_book_cents": 0,
+         "acquired_cents": 0, "transfer_in_cents": 13, "transfer_out_cents": 13,
+         "depreciation_cents": 0, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 0},
+        {"asset_id": "R", "category": "equipment", "opening_book_cents": 0,
+         "acquired_cents": 0, "transfer_in_cents": 3, "transfer_out_cents": 3,
+         "depreciation_cents": 0, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 0},
+        {"asset_id": "X", "category": "equipment", "opening_book_cents": 0,
+         "acquired_cents": 0, "transfer_in_cents": 9, "transfer_out_cents": 0,
+         "depreciation_cents": 2, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 7},
+        {"asset_id": "Y", "category": "equipment", "opening_book_cents": 0,
+         "acquired_cents": 0, "transfer_in_cents": 4, "transfer_out_cents": 0,
+         "depreciation_cents": 1, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 3}
+      ],
+      "categories": {
+        "equipment": {"opening_book_cents": 8, "acquired_cents": 0,
+                      "transfer_in_cents": 34, "transfer_out_cents": 29,
+                      "depreciation_cents": 3, "carrying_removed_cents": 0,
+                      "proceeds_cents": 0, "gain_loss_cents": 0,
+                      "closing_book_cents": 10},
+        "tools": {"opening_book_cents": 0, "acquired_cents": 5,
+                  "transfer_in_cents": 0, "transfer_out_cents": 5,
+                  "depreciation_cents": 0, "carrying_removed_cents": 0,
+                  "proceeds_cents": 0, "gain_loss_cents": 0,
+                  "closing_book_cents": 0}
+      }
+    },
+    {
+      "month": "2026-03",
+      "assets": [
+        {"asset_id": "X", "category": "equipment", "opening_book_cents": 7,
+         "acquired_cents": 0, "transfer_in_cents": 0, "transfer_out_cents": 0,
+         "depreciation_cents": 0, "carrying_removed_cents": 7, "proceeds_cents": 8,
+         "gain_loss_cents": 1, "closing_book_cents": 0},
+        {"asset_id": "Y", "category": "equipment", "opening_book_cents": 3,
+         "acquired_cents": 0, "transfer_in_cents": 0, "transfer_out_cents": 0,
+         "depreciation_cents": 1, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 2}
+      ],
+      "categories": {
+        "equipment": {"opening_book_cents": 10, "acquired_cents": 0,
+                      "transfer_in_cents": 0, "transfer_out_cents": 0,
+                      "depreciation_cents": 1, "carrying_removed_cents": 7,
+                      "proceeds_cents": 8, "gain_loss_cents": 1,
+                      "closing_book_cents": 2}
+      }
+    },
+    {
+      "month": "2026-04",
+      "assets": [
+        {"asset_id": "Y", "category": "equipment", "opening_book_cents": 2,
+         "acquired_cents": 0, "transfer_in_cents": 0, "transfer_out_cents": 0,
+         "depreciation_cents": 1, "carrying_removed_cents": 0, "proceeds_cents": 0,
+         "gain_loss_cents": 0, "closing_book_cents": 1}
+      ],
+      "categories": {
+        "equipment": {"opening_book_cents": 2, "acquired_cents": 0,
+                      "transfer_in_cents": 0, "transfer_out_cents": 0,
+                      "depreciation_cents": 1, "carrying_removed_cents": 0,
+                      "proceeds_cents": 0, "gain_loss_cents": 0,
+                      "closing_book_cents": 1}
+      }
+    }
+  ]
+}
